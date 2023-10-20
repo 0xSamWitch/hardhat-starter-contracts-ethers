@@ -1,7 +1,7 @@
 import {loadFixture} from "@nomicfoundation/hardhat-toolbox/network-helpers";
 import {ethers} from "hardhat";
 import {expect} from "chai";
-import {TOKEN_CONTRACT_NAME} from "../constants/network_constants";
+import {TOKEN_CONTRACT_NAME} from "../constants/contracts";
 
 describe("OFTERC20", function () {
   async function deployContractsFixture() {

@@ -45,6 +45,8 @@
     "clean": "npx hardhat clean",
     "deploy": "npx hardhat run scripts/deploy.ts",
     "verify": "npx hardhat verify",
+    "fork": "npx hardhat node",
+    "impersonate": "npx hardhat run scripts/impersonate.ts --network localhost",
     "setTrustedRemote": "npx hardhat set-trusted-remote",
     "sendOFTCrossChain": "npx hardhat send-oft-cross-chain",
     "coverage": "cross-env HARDHAT_VIAIR=false npx hardhat coverage",

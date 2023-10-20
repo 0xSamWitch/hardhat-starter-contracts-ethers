@@ -1,14 +1,15 @@
 import {HardhatUserConfig, task} from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import "@openzeppelin/hardhat-upgrades";
 import "hardhat-abi-exporter";
 import "hardhat-contract-sizer";
 import "hardhat-storage-layout";
 import "solidity-coverage";
-import "dotenv/config";
 import {SolcUserConfig} from "hardhat/types";
 import setTrustedRemote from "./tasks/setTrustedRemote";
 import sendOFTCrossChain from "./tasks/sendOFTCrossChain";
 import {ethers} from "ethers";
+import "dotenv/config";
 
 task("set-trusted-remote", "Sets the trusted remote for the target network for layer zero OFT communication")
   .addParam("targetNetwork", "the target network to set as a trusted remote")
@@ -76,7 +77,7 @@ const config: HardhatUserConfig = {
   solidity: {
     compilers: [defaultConfig, lowRunsConfig, mediumRunsConfig, highRunsConfig],
     overrides: {
-      "contracts/token/OFTERC20.sol": highRunsConfig,
+      "contracts/OFTERC20.sol": highRunsConfig,
     },
   },
   gasReporter: {
