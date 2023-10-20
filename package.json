@@ -44,6 +44,7 @@
     "test": "npx hardhat test",
     "clean": "npx hardhat clean",
     "deploy": "npx hardhat run scripts/deploy.ts",
+    "deployOFT": "npx hardhat run scripts/deployOFT.ts",
     "verify": "npx hardhat verify",
     "fork": "npx hardhat node",
     "impersonate": "npx hardhat run scripts/impersonate.ts --network localhost",

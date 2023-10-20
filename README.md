@@ -31,9 +31,12 @@ yarn test
 # First need to edit hardhat.config.ts and set viaIR: false
 yarn coverage
 
-# To deploy the contracts
+# To deploy all contracts
 yarn deploy --network <network>
 yarn deploy --network fantom_testnet
+
+# To just deploy the OFT
+yarn deployOFT --network fantom_testnet
 
 # Export abi
 yarn abi

@@ -6,7 +6,7 @@ import {ERC1155_CONTRACT_NAME, contractAddresses} from "../constants/contracts";
 async function main() {
   const [owner] = await ethers.getSigners();
   const network = await ethers.provider.getNetwork();
-  console.log(`Deploying contracts with the account: ${owner.address} on chain id: ${network.chainId}`);
+  console.log(`Upgrading ERC1155Upgrade with the account: ${owner.address} on chain id: ${network.chainId}`);
 
   const {shouldVerify} = await networkConstants(hre);
   const {ERC1155} = await contractAddresses(hre);
