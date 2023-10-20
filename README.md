@@ -28,7 +28,6 @@ yarn compile
 yarn test
 
 # To get code coverage
-# First need to edit hardhat.config.ts and set viaIR: false
 yarn coverage
 
 # To deploy all contracts
