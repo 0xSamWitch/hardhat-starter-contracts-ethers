@@ -1,17 +1,22 @@
-# Sample hardhat project
+# Sample hardhat project using ethers
 
-Features the following libraries:
+This project contains all the boiler plate to start developing smart contracts.
 
-Hardhat
-Ethers
-OpenZeppelin v5
-LayerZero
+It uses the latest library versions of hardhat, ethers v6, openzeppelin v5 and custom layer zero implementation which supports OZ v5.
 
-Support for tasks, continuous integration, tests, upgradeable contracts and cross-chain messaging.
+It has Github Actions CI for running the deploy script and running tests.
 
-[![Continuous integration](https://github.com/0xSamwitch/hardhat-starter-contracts/actions/workflows/main.yml/badge.svg)](https://github.com/0xSamWitch/hardhat-starter-contracts/actions/workflows/main.yml)
+Includes both hardhat scripts & tasks, tests, upgradeable contract and cross-chain messaging.
 
-Copy .env.sample
+Verification with etherscan as part of the deploy script. Solidity coverage, gas tracking and abi exporting.
+
+Should you not need any of these features then simply remove them.
+
+Feel free to contribute any improvements, we just don't want to add too much stuff, it should be the minimum required to get started.
+
+[![Continuous integration](https://github.com/0xSamwitch/hardhat-starter-contracts-ethers/actions/workflows/main.yml/badge.svg)](https://github.com/0xSamWitch/hardhat-starter-contracts-ethers/actions/workflows/main.yml)
+
+To start copy the .env.sample file to .env and fill in PRIVATE_KEY at minimum, starts with 0x
 
 ```shell
 yarn install
@@ -21,6 +26,10 @@ yarn compile
 
 # To run the tests
 yarn test
+
+# To get code coverage
+# First need to edit hardhat.config.ts and set viaIR: false
+yarn coverage
 
 # To deploy the contracts
 yarn deploy --network <network>

@@ -9,8 +9,8 @@ jobs:
       MAINNET_RPC: NA
       GOERLI_RPC: NA
       SEPOLIA_RPC: NA
-      FTM_RPC: NA
-      FTM_TESTNET_RPC: NA
+      FANTOM_RPC: NA
+      FANTOM_TESTNET_RPC: NA
       PRIVATE_KEY: "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
 
     steps:

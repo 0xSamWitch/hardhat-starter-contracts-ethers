@@ -8,6 +8,7 @@ import "dotenv/config";
 import {SolcUserConfig} from "hardhat/types";
 import setTrustedRemote from "./tasks/setTrustedRemote";
 import sendOFTCrossChain from "./tasks/sendOFTCrossChain";
+import {ethers} from "ethers";
 
 task("set-trusted-remote", "Sets the trusted remote for the target network for layer zero OFT communication")
   .addParam("targetNetwork", "the target network to set as a trusted remote")
@@ -29,7 +30,7 @@ const defaultConfig: SolcUserConfig = {
         yul: true,
       },
     },
-    viaIR: true, // Change to false when running coverage
+    viaIR: process.env.HARDHAT_VIAIR != "false", // This cannot be used with coverage for instance
     outputSelection: {
       "*": {
         "*": ["storageLayout"],
@@ -95,6 +96,7 @@ const config: HardhatUserConfig = {
     ethereum: {
       url: process.env.MAINNET_RPC,
       accounts: [process.env.PRIVATE_KEY as string],
+      gasPrice: Number(ethers.parseUnits("11", "gwei")), // Example setting gas price yourself
     },
     goerli: {
       url: process.env.GOERLI_RPC,
@@ -105,11 +107,11 @@ const config: HardhatUserConfig = {
       accounts: [process.env.PRIVATE_KEY as string],
     },
     fantom: {
-      url: process.env.FTM_RPC,
+      url: process.env.FANTOM_RPC,
       accounts: [process.env.PRIVATE_KEY as string],
     },
     fantom_testnet: {
-      url: process.env.FTM_TESTNET_RPC,
+      url: process.env.FANTOM_TESTNET_RPC,
       accounts: [process.env.PRIVATE_KEY as string],
     },
   },
