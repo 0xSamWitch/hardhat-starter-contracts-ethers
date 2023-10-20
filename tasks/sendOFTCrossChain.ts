@@ -1,5 +1,5 @@
 import {HardhatRuntimeEnvironment, TaskArguments} from "hardhat/types";
-import {getOFTDeploymentAddress, LZ_CHAIN_IDS, TOKEN_CONTRACT_NAME} from "../data/constants";
+import {getOFTDeploymentAddress, LZ_CHAIN_IDS, TOKEN_CONTRACT_NAME} from "../constants/network_constants";
 
 export async function sendOFTCrossChain(taskArgs: TaskArguments, hre: HardhatRuntimeEnvironment) {
   if (!taskArgs.targetNetwork) {

@@ -1,6 +1,5 @@
-import {ethers} from "hardhat";
-import {TOKEN_CONTRACT_NAME} from "../data/constants";
-import {networkConstants} from "../data/network_constants";
+import hre, {ethers} from "hardhat";
+import {TOKEN_CONTRACT_NAME, networkConstants} from "../constants/network_constants";
 import {verifyContracts} from "./helpers";
 
 async function main() {
@@ -8,7 +7,7 @@ async function main() {
   const network = await ethers.provider.getNetwork();
   console.log(`Deploying contracts with the account: ${owner.address} on chain id: ${network.chainId}`);
 
-  const {lzEndpoint, numBlocksWait, shouldVerify} = await networkConstants();
+  const {lzEndpoint, numBlocksWait, shouldVerify} = await networkConstants(hre);
   const oft = await ethers.deployContract(TOKEN_CONTRACT_NAME);
   await oft.waitForDeployment();
   console.log(`OFT deployed to: ${await oft.getAddress()}`);
