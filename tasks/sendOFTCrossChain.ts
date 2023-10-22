@@ -14,11 +14,11 @@ export async function sendOFTCrossChain(taskArgs: TaskArguments, hre: HardhatRun
   }
 
   const network = await hre.ethers.provider.getNetwork();
-  const lzLocalNetworkName = network.name.replace("_", "-");
+  const lzLocalNetworkName = network.name;
   const oftLocalAddress = getOFTDeploymentAddress(lzLocalNetworkName);
   const oftLocal = await hre.ethers.getContractAt(TOKEN_CONTRACT_NAME, oftLocalAddress);
 
-  const lzRemoteNetworkName = (taskArgs.targetNetwork as string).replace("_", "-");
+  const lzRemoteNetworkName = taskArgs.targetNetwork as string;
   const [owner] = await hre.ethers.getSigners();
   let toAddress = owner.address;
   let toAddressBytes = hre.ethers.AbiCoder.defaultAbiCoder().encode(["address"], [toAddress]);

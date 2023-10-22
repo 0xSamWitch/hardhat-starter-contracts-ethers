@@ -51,14 +51,14 @@ export const LZ_CHAIN_IDS = {
   fantom: 112,
 
   goerli: 10121,
-  "bsc-testnet": 10102,
+  bsc_testnet: 10102,
   fuji: 10106,
   mumbai: 10109,
-  "arbitrum-goerli": 10143,
-  "optimism-goerli": 10132,
-  "fantom-testnet": 10112,
-  "meter-testnet": 10156,
-  "zksync-testnet": 10165,
+  arbitrum_goerli: 10143,
+  optimism_goerli: 10132,
+  fantom_testnet: 10112,
+  meter_testnet: 10156,
+  zksync_testnet: 10165,
 };
 
 export default LZ_CHAIN_IDS;

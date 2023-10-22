@@ -39,7 +39,7 @@ export const contractAddresses = async (hre: HardhatRuntimeEnvironment): Promise
     case 4002n: // Fantom testnet
       WNATIVE = "0xf1277d1ed8ad466beddf92ef448a132661956621";
       LZ_ENDPOINT = "0x7dcAD72640F835B0FA36EFD3D6d3ec902C7E5acf";
-      OFT = getOFTDeploymentAddress("fantom-testnet");
+      OFT = getOFTDeploymentAddress("fantom_testnet");
       break;
     case 250n: // Fantom
       WNATIVE = "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83";
@@ -61,7 +61,7 @@ export const getOFTDeploymentAddress = (lzNetworkName: string) => {
   switch (lzNetworkName) {
     case "goerli":
       return "0x0374eF459aa09a51590B1dC9803Ce1E7E5a7CF67";
-    case "fantom-testnet":
+    case "fantom_testnet":
       return "0x6c3f5b1E0727bc97d4C750381999d7b8DE9D0203";
     default:
       throw Error(`Not a supported network ${lzNetworkName}`);

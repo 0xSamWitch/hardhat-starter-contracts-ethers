@@ -9,11 +9,11 @@ export async function setTrustedRemote(taskArgs: TaskArguments, hre: HardhatRunt
   }
 
   const network = await hre.ethers.provider.getNetwork();
-  const lzLocalNetworkName = network.name.replace("_", "-");
+  const lzLocalNetworkName = network.name;
   const oftLocalAddress = getOFTDeploymentAddress(lzLocalNetworkName);
   const oftLocal = await hre.ethers.getContractAt(TOKEN_CONTRACT_NAME, oftLocalAddress);
 
-  const lzRemoteNetworkName = (taskArgs.targetNetwork as string).replace("_", "-");
+  const lzRemoteNetworkName = taskArgs.targetNetwork as string;
   const oftRemoteAddress = getOFTDeploymentAddress(lzRemoteNetworkName);
 
   const remoteChainId = LZ_CHAIN_IDS[lzRemoteNetworkName as keyof typeof LZ_CHAIN_IDS];
