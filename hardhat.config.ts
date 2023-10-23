@@ -115,6 +115,10 @@ const config: HardhatUserConfig = {
       url: process.env.FANTOM_TESTNET_RPC,
       accounts: [process.env.PRIVATE_KEY as string],
     },
+    avalanche: {
+      url: process.env.AVALANCHE_RPC,
+      accounts: [process.env.PRIVATE_KEY as string],
+    },
   },
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY,
