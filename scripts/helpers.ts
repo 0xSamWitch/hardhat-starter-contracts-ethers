@@ -18,7 +18,7 @@ export const verifyContracts = async (addresses: string[], args: any[][] = []) =
 export const deployToken = async (): Promise<OFTERC20> => {
   const {numBlocksWait} = await networkConstants(hre);
   const {LZ_ENDPOINT} = await contractAddresses(hre);
-  const oft = await ethers.deployContract(TOKEN_CONTRACT_NAME, {});
+  const oft = await ethers.deployContract(TOKEN_CONTRACT_NAME);
   await oft.waitForDeployment();
   console.log(`OFT deployed to: ${await oft.getAddress()}`);
 
